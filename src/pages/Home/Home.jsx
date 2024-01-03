@@ -1,14 +1,16 @@
 import React from "react";
 import CategoryMarque from "../../componenets/HomeComponent/CategoryMarque";
 import Marquee from "react-fast-marquee";
+import ProductSection from "../../componenets/HomeComponent/ProductSection";
 
 function Home() {
   return (
-    <React.Fragment>
+    <div className="px-4">
       <Marquee pauseOnHover="true">
         <CategoryMarque />
       </Marquee>
-    </React.Fragment>
+      <ProductSection />
+    </div>
   );
 }
 
