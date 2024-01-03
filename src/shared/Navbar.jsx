@@ -3,7 +3,7 @@ import NavItems from "../componenets/NavItems/NavItems";
 function Navbar() {
   const user = true;
   return (
-    <div className="navbar bg-white shadow ">
+    <div className="navbar bg-white shadow sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,7 +24,7 @@ function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded w-52"
           >
             <NavItems />
           </ul>
@@ -75,7 +75,7 @@ function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-30 p-2 shadow bg-base-100 rounded w-52"
             >
               <li>
                 <a className="justify-between">

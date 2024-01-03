@@ -18,7 +18,9 @@ const ProductCard = ({ product }) => {
           <p>
             <span className="text-3xl font-bold text-slate-900">${price}</span>
           </p>
-          Rating : {rating.rate}
+          <p>
+            Rating : <span className="font-bold">{rating.rate}</span>
+          </p>
         </div>
         <div className="flex items-center justify-center gap-4">
           <button className="flex w-full items-center justify-center rounded-md bg-slate-900 px-5 py-3.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-950">
