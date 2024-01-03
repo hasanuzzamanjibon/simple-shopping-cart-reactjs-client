@@ -1,9 +1,13 @@
 import React from "react";
+import CategoryMarque from "../../componenets/HomeComponent/CategoryMarque";
+import Marquee from "react-fast-marquee";
 
 function Home() {
   return (
     <React.Fragment>
-      <div>Home</div>
+      <Marquee pauseOnHover="true">
+        <CategoryMarque />
+      </Marquee>
     </React.Fragment>
   );
 }
