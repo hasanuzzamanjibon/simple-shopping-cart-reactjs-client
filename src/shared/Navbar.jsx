@@ -17,7 +17,7 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar bg-white shadow border-b-4 border-green-500 sticky top-0 z-50">
+    <div className="navbar bg-white shadow border-b-4 border-teal-500 sticky top-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,7 +45,7 @@ function Navbar() {
         </div>
         <div className="flex gap-3 justify-center items-center">
           <img className="h-8 lg:h-12" src="https://i.postimg.cc/qBbmzz0G/logo.png" alt="logo" />
-          <p className="text-xl  lg:text-3xl  font-semibold bg-gradient-to-r from-blue-600 via-green-500 to-sky-400 text-transparent bg-clip-text">
+          <p className="text-xl  lg:text-3xl  font-semibold bg-gradient-to-r from-teal-500 to-sky-500 text-transparent bg-clip-text">
             Fast Cart
           </p>
         </div>

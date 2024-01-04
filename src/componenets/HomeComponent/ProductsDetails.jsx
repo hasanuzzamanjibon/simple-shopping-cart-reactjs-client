@@ -8,7 +8,7 @@ import BuyNow from "../Buttons/BuyNow";
 import toast from "react-hot-toast";
 
 const ProductsDetails = () => {
-  const { _id, title, price, image, rating, description } = useLoaderData();
+  const { _id, title, price, image, rating, description, category } = useLoaderData();
   const [products] = useGetAllProducts();
   const remaining = products.filter((p) => p._id !== _id);
   const [valueOfQty, setValue] = useState(1);
@@ -48,6 +48,13 @@ const ProductsDetails = () => {
                 <th>Price </th>
                 <th>: </th>
                 <th>${price}</th>
+              </tr>
+              <tr className="border-b-2 border-dotted border-gray-300 ">
+                <th>Category </th>
+                <th>: </th>
+                <th>
+                  <span className="badge badge-lg badge-primary">{category}</span>
+                </th>
               </tr>
               <tr className="border-b-2 border-dotted border-gray-300 ">
                 <th>Rating </th>
