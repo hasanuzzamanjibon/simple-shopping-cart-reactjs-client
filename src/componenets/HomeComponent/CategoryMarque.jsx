@@ -9,7 +9,13 @@ function CategoryMarque() {
     <div className="flex justify-center items-center gap-6 my-4">
       {Catagories &&
         Catagories.map((category) => (
-          <Link className="rounded-full border px-4 py-1 font-semibold" key={category}>{category.charAt(0).toUpperCase() + category.slice(1)}</Link>
+          <Link
+            to={`/products/category/${category}`}
+            className="rounded-full border px-4 py-1 font-semibold"
+            key={category}
+          >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+          </Link>
         ))}
     </div>
   );

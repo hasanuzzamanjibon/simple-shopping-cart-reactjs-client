@@ -26,12 +26,12 @@ const ProductsDetails = () => {
   };
 
   return (
-    <div className="px-6 mt-10 ">
-      <div className=" grid grid-cols-1 lg:grid-cols-3 gap-7">
+    <div className="px-4 mt-10 ">
+      <div className=" grid grid-cols-1 md:grid-cols-3 gap-7">
         <div className=" lg:col-span-1 flex justify-center w-full">
           <img className="h-72 lg:h-96 w-auto " src={image} alt={title} />
         </div>
-        <div className="lg:col-span-2 text-left">
+        <div className="md:col-span-2 text-left">
           <table cellPadding={7} className="text-xl w-full">
             <tbody>
               <tr className="border-b-2 border-dotted border-gray-300">
