@@ -1,12 +1,12 @@
-import { Rating } from "@smastrom/react-rating";
 import { MdInfoOutline } from "react-icons/md";
-
+import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
-  const { _id, title, price, description, image, rating } = product || {};
+  const { _id, title, price, image, rating } = product || {};
 
-  console.log(product);
+  // axios.get(`http://localhost:3001/products/${id}`).then((res) => {
+
   return (
-    <div className="relative cursor-pointer  flex w-full  flex-col overflow-hidden rounded-lg border border-gray-100 bg-gray-50 shadow-md">
+    <div className="relative cursor-pointer hover:shadow-2xl  flex w-full  flex-col overflow-hidden rounded-lg border border-gray-100 bg-gray-50 shadow-sm transition duration-500">
       <div className="flex justify-center py-8">
         <img className="object-cover h-40" src={image} alt="product image" />
       </div>
@@ -40,9 +40,13 @@ const ProductCard = ({ product }) => {
             </svg>
             Add to cart
           </button>
-          <button className="text-xl font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-950 bg-slate-900 px-5 py-4 text-center rounded-md">
+
+          <Link
+            to={`/products/${_id}`}
+            className="text-xl font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-950 bg-slate-900 px-5 py-4 text-center rounded-md"
+          >
             <MdInfoOutline />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

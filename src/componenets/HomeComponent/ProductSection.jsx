@@ -2,7 +2,7 @@ import useGetAllProducts from "../../customHook/useGetAllProducts";
 import ProductCard from "../ProductCard/ProductCard";
 
 const ProductSection = () => {
-  const [products, countDocuments] = useGetAllProducts();
+  const [products] = useGetAllProducts();
 
   return (
     <div className="text-center">
