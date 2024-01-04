@@ -1,7 +1,21 @@
+import { useContext } from "react";
 import NavItems from "../componenets/NavItems/NavItems";
+import { AuthContext } from "../auth/AuthProvider/AuthProvider";
 
 function Navbar() {
-  const user = true;
+  const { user, handleGoogleLogin } = useContext(AuthContext);
+
+  const LoginWithGoogle = () => {
+    handleGoogleLogin()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   return (
     <div className="navbar bg-white shadow sticky top-0 z-50">
       <div className="navbar-start">
@@ -67,7 +81,10 @@ function Navbar() {
           <div className="dropdown dropdown-end !focus:outline-0">
             <div tabIndex={0} role="button" className="btn  btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img alt="avatar" src="https://i.postimg.cc/9fKFxVjj/avatar.png" />
+                <img
+                  alt="avatar"
+                  src={user.photoURL || "https://i.postimg.cc/9fKFxVjj/avatar.png"}
+                />
               </div>
             </div>
             <ul
@@ -76,7 +93,7 @@ function Navbar() {
             >
               <li>
                 <a className="justify-between">
-                  Profile
+                  {user.displayName}
                   <span className="badge">New</span>
                 </a>
               </li>
@@ -89,7 +106,9 @@ function Navbar() {
             </ul>
           </div>
         ) : (
-          <a className="btn btn-sm btn-accent text-white">Login</a>
+          <button onClick={LoginWithGoogle} className="btn btn-sm btn-accent text-white">
+            Login
+          </button>
         )}
       </div>
     </div>
