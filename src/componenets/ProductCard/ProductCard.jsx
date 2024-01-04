@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
           </p>
         </div>
         <div className="flex items-center justify-center gap-4">
-          <button className="flex w-full items-center justify-center rounded-md bg-slate-900 px-5 py-3.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-950">
+          <button className="flex w-full items-center justify-center rounded-md px-5 py-3.5 text-center text-sm font-medium text-white bg-green-500 hover:bg-green-700 focus:border-0 focus:outline-none active:bg-green-900">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="mr-2 h-6 w-6"
@@ -43,7 +43,7 @@ const ProductCard = ({ product }) => {
 
           <Link
             to={`/products/${_id}`}
-            className="text-xl font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-950 bg-slate-900 px-5 py-4 text-center rounded-md"
+            className="flex text-2xl items-center justify-center rounded-md px-5 py-3.5 text-center font-medium text-white bg-green-600 hover:bg-green-700 focus:border-0 focus:outline-none active:bg-green-900"
           >
             <MdInfoOutline />
           </Link>
