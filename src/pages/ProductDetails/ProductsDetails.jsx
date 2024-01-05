@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import useGetAllProducts from "../../customHook/useGetAllProducts";
-import ProductCard from "../ProductCard/ProductCard";
+import ProductCard from "../../componenets/ProductCard/ProductCard";
 
-import AddToCarts from "../Buttons/AddToCarts";
-import BuyNow from "../Buttons/BuyNow";
+import AddToCarts from "../../componenets/Buttons/AddToCarts";
+import BuyNow from "../../componenets/Buttons/BuyNow";
 import toast from "react-hot-toast";
 
 const ProductsDetails = () => {
@@ -53,7 +53,9 @@ const ProductsDetails = () => {
                 <th>Category </th>
                 <th>: </th>
                 <th>
-                  <span className="badge badge-lg badge-primary">{category}</span>
+                  <span className="badge badge-lg badge-info text-white">
+                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                  </span>
                 </th>
               </tr>
               <tr className="border-b-2 border-dotted border-gray-300 ">
