@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import NavItems from "../componenets/NavItems/NavItems";
 import { AuthContext } from "../auth/AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const { user, handleGoogleLogin } = useContext(AuthContext);
@@ -98,7 +99,7 @@ function Navbar() {
                 </a>
               </li>
               <li>
-                <a>Settings</a>
+                <Link to={"/dashboard/admin/statistics"}>Dashboard</Link>
               </li>
               <li>
                 <a>Logout</a>

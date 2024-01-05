@@ -4,6 +4,8 @@ import Root from "../layouts/Root";
 import ProductsDetails from "../pages/ProductDetails/ProductsDetails";
 import CategoryProducts from "../pages/CategoryProducts/CategoryProducts";
 import Dashboard from "../layouts/Dashboard";
+
+import StatisticsAdmin from "../dashboard/Admin/StatisticsAdmin";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,8 +32,8 @@ const router = createBrowserRouter([
     element: <Dashboard />,
     children: [
       {
-        path: "admin/allusers",
-        element: <div>All Users here</div>
+        path: "admin/statistics",
+        element: <StatisticsAdmin />,
       },
     ],
   },
