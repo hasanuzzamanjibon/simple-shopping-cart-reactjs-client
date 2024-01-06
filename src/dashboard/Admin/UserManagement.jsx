@@ -87,8 +87,8 @@ const UserManagement = () => {
             </thead>
             <tbody className="">
               {users &&
-                users?.map((user, i) => (
-                  <Fade bottom key={user.id}>
+                users?.slice(0,10).map((user, i) => (
+                  <Fade bottom key={i}>
                     <tr className="px-10 hover:!bg-gray-300 transition duration-300 cursor-pointer [&:nth-child(odd)]:bg-gray-100">
                       <td className="px-4 py-1">{i + 1}.</td>
                       <td className="px-4 py-1">{user?.name}</td>
