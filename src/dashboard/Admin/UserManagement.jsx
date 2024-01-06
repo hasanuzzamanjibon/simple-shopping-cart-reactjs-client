@@ -78,29 +78,29 @@ const UserManagement = () => {
                 <th>Sl.</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>City</th>
-                <th>Street</th>
-                <th>Contact Number</th>
-                <th>Website</th>
-                <th>Company Name</th>
+                <th className="hidden md:table-cell">City</th>
+                <th className="hidden md:table-cell">Street</th>
+                <th className="hidden md:table-cell">Contact Number</th>
+                <th className="hidden md:table-cell">Website</th>
+                <th className="hidden md:table-cell">Company Name</th>
               </tr>
             </thead>
             <tbody className="">
-              {users &&
-                users?.slice(0,10).map((user, i) => (
+              {/* {users &&
+                users?.slice(0, 10).map((user, i) => (
                   <Fade bottom key={i}>
                     <tr className="px-10 hover:!bg-gray-300 transition duration-300 cursor-pointer [&:nth-child(odd)]:bg-gray-100">
                       <td className="px-4 py-1">{i + 1}.</td>
                       <td className="px-4 py-1">{user?.name}</td>
                       <td className="px-4 py-1">{user?.email}</td>
-                      <td className="px-4 py-1">{user?.address?.street}</td>
-                      <td className="px-4 py-1">{user?.address?.city}</td>
-                      <td className="px-4 py-1">{user?.phone}</td>
-                      <td className="px-4 py-1">{user?.website}</td>
-                      <td className="px-4 py-1">{user?.company?.name}</td>
+                      <td className="px-4 py-1 ">{user?.address?.street}</td>
+                      <td className="px-4 py-1 ">{user?.address?.city}</td>
+                      <td className="px-4 py-1 ">{user?.phone}</td>
+                      <td className="px-4 py-1 ">{user?.website}</td>
+                      <td className="px-4 py-1 ">{user?.company?.name}</td>
                     </tr>
                   </Fade>
-                ))}
+                ))} */}
             </tbody>
           </table>
         </div>

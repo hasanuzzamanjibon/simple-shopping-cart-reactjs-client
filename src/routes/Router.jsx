@@ -8,6 +8,7 @@ import Dashboard from "../layouts/Dashboard";
 import StatisticsAdmin from "../dashboard/Admin/StatisticsAdmin";
 import UserManagement from "../dashboard/Admin/UserManagement";
 import ProductsManagement from "../dashboard/Admin/ProductsManagement";
+import Registration from "../pages/Registration/Registration";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +17,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/log-in",
+        element: <div>Login</div>,
+      },
+      {
+        path: "/sign-up",
+        element: <Registration />,
       },
       {
         path: "products/:id",

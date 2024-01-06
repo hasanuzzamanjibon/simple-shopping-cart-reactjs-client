@@ -1,4 +1,4 @@
-import React from "react";
+
 import CategoryMarque from "../../componenets/HomeComponent/CategoryMarque";
 import Marquee from "react-fast-marquee";
 import ProductSection from "../../componenets/HomeComponent/ProductSection";
