@@ -4,18 +4,9 @@ import { AuthContext } from "../auth/AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const { user, handleGoogleLogin } = useContext(AuthContext);
+  const { user, handleSignOut } = useContext(AuthContext);
 
-  const LoginWithGoogle = () => {
-    handleGoogleLogin()
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  };
+
 
   return (
     <div className="navbar bg-white shadow border-b-4 border-teal-500 sticky top-0 z-50">
@@ -101,15 +92,15 @@ function Navbar() {
               <li>
                 <Link to={"/dashboard/admin/statistics"}>Dashboard</Link>
               </li>
-              <li>
+              <li onClick={handleSignOut}>
                 <a>Logout</a>
               </li>
             </ul>
           </div>
         ) : (
-          <button onClick={LoginWithGoogle} className="btn btn-sm btn-accent text-white">
+          <Link to={"/log-in"} className="btn btn-sm btn-accent text-white">
             Login
-          </button>
+          </Link>
         )}
       </div>
     </div>

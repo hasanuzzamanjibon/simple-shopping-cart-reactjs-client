@@ -4,10 +4,13 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { app } from "../../../firebase.config";
+
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
@@ -22,8 +25,23 @@ const AuthProvider = ({ children }) => {
   const handleEmailSIgnup = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
   const handleSignOut = () => {
     return signOut(auth);
+  };
+  const handleLogin = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const handleUpdateProfile = (name, imgUrl) => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: imgUrl,
+    })
+      .then(() => {})
+      .catch((error) => {
+        console.error(error.messsage);
+      });
   };
 
   useEffect(() => {
@@ -39,6 +57,8 @@ const AuthProvider = ({ children }) => {
     handleGoogleLogin,
     handleEmailSIgnup,
     handleSignOut,
+    handleLogin,
+    handleUpdateProfile,
   };
   return <AuthContext.Provider value={AuthInfo}>{children}</AuthContext.Provider>;
 };

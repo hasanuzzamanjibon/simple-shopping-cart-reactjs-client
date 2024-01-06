@@ -9,6 +9,7 @@ import StatisticsAdmin from "../dashboard/Admin/StatisticsAdmin";
 import UserManagement from "../dashboard/Admin/UserManagement";
 import ProductsManagement from "../dashboard/Admin/ProductsManagement";
 import Registration from "../pages/Registration/Registration";
+import Login from "../pages/Login/Login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/log-in",
-        element: <div>Login</div>,
+        element: <Login />,
       },
       {
         path: "/sign-up",
