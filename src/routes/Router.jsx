@@ -45,6 +45,10 @@ const router = createBrowserRouter([
         path: "admin/products-management",
         element: <ProductsManagement />,
       },
+      {
+        path: "admin/chat",
+        element: <div>Chat Bot is Here</div>,
+      },
     ],
   },
 ]);

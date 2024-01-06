@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { IoChatboxOutline } from "react-icons/io5";
 
 const AdminRoutes = () => {
   const location = useLocation();
@@ -130,6 +131,23 @@ const AdminRoutes = () => {
             {/* <img className="w-5 h-5" src={productsImg} alt="" /> */}
           </span>
           <span className="ml-2 text-sm tracking-wide truncate">Products Management</span>
+        </Link>
+      </li>
+      <li>
+        <Link
+          to={"/dashboard/admin/chat"}
+          className={`relative flex flex-row items-center h-11 focus:outline-none hover:bg-teal-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-teal-300 dark:hover:border-gray-800 pr-6 
+          ${
+            location.pathname === "/dashboard/admin/chat" &&
+            "bg-teal-800 dark:bg-gray-600  !border-teal-300 border-l-4 dark:border-gray-800"
+          }
+          `}
+        >
+          <span className="inline-flex justify-center items-center ml-4">
+            <IoChatboxOutline />
+            {/* <img className="w-5 h-5" src={productsImg} alt="" /> */}
+          </span>
+          <span className="ml-2 text-sm tracking-wide truncate">Chat</span>
         </Link>
       </li>
     </React.Fragment>
