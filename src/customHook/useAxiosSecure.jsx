@@ -7,7 +7,7 @@ const useAxiosSecure = () => {
   const { handleSignOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const axiosSecure = axios.create({
-    baseURL: "http://localhost:3001",
+    baseURL: import.meta.env.VITE_baseurl,
   });
   useEffect(() => {
     axiosSecure.interceptors.request.use((config) => {
