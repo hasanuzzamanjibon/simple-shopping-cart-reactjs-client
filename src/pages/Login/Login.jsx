@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useContext, useState } from "react";
 import GoogleBtn from "../../componenets/Buttons/GoogleBtn";
@@ -10,7 +10,8 @@ const Login = () => {
   const [isShow, setShow] = useState(false);
   const { handleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -30,7 +31,7 @@ const Login = () => {
         }
       })
       .then(() => {
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         toast.error(err.code);

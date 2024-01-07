@@ -145,7 +145,6 @@ const AdminRoutes = () => {
         >
           <span className="inline-flex justify-center items-center ml-4">
             <IoChatboxOutline />
-            {/* <img className="w-5 h-5" src={productsImg} alt="" /> */}
           </span>
           <span className="ml-2 text-sm tracking-wide truncate">Chat</span>
         </Link>

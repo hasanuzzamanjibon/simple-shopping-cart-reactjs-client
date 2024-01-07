@@ -90,7 +90,7 @@ function Navbar() {
                 </a>
               </li>
               <li>
-                <Link to={"/dashboard/admin/statistics"}>Dashboard</Link>
+                <Link to={"/dashboard/seller/statistics"}>Dashboard</Link>
               </li>
               <li onClick={handleSignOut}>
                 <a>Logout</a>

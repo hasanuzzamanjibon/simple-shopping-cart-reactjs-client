@@ -11,6 +11,10 @@ import ProductsManagement from "../dashboard/Admin/ProductsManagement";
 import Registration from "../pages/Registration/Registration";
 import Login from "../pages/Login/Login";
 import axios from "axios";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import AddProduct from "../dashboard/Seller/AddProduct";
+import MyProducts from "../dashboard/Seller/MyProducts";
+import StatisticsSeller from "../dashboard/Seller/StatisticsSeller";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,7 +47,11 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard />,
+    element: (
+      <PrivateRoute>
+        <Dashboard />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "admin/statistics",
@@ -59,7 +67,23 @@ const router = createBrowserRouter([
       },
       {
         path: "admin/chat",
-        element: <div>Chat Bot is Here</div>,
+        element: <div className="py-5">Admin Chat Bot is Here</div>,
+      },
+      {
+        path: "seller/add-product",
+        element: <AddProduct />,
+      },
+      {
+        path: "seller/my-product",
+        element: <MyProducts />,
+      },
+      {
+        path: "seller/statistics",
+        element: <StatisticsSeller />,
+      },
+      {
+        path: "seller/chat",
+        element: <div className="py-5">Seller Chat Bot is Here</div>,
       },
     ],
   },

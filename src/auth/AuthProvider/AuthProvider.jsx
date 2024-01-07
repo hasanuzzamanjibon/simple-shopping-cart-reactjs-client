@@ -17,24 +17,30 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const goooleProvider = new GoogleAuthProvider();
 
   const handleGoogleLogin = () => {
+    setLoading(true);
     return signInWithPopup(auth, goooleProvider);
   };
 
   const handleEmailSIgnup = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const handleSignOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
   const handleLogin = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const handleUpdateProfile = (LoggedInUser, name, imgUrl) => {
+    setLoading(true);
     return updateProfile(LoggedInUser, {
       displayName: name,
       photoURL: imgUrl,
@@ -48,10 +54,12 @@ const AuthProvider = ({ children }) => {
         axios.post("http://localhost:3001/jwt", { email: currentUser.email }).then((data) => {
           const token = data.data.token;
           localStorage.setItem("access-token", token);
+         
         });
       } else {
         localStorage.removeItem("access-token");
       }
+     setLoading(false);
     });
     return () => {
       unsubscibe();
@@ -64,6 +72,7 @@ const AuthProvider = ({ children }) => {
     handleSignOut,
     handleLogin,
     handleUpdateProfile,
+    loading,
   };
   return <AuthContext.Provider value={AuthInfo}>{children}</AuthContext.Provider>;
 };
