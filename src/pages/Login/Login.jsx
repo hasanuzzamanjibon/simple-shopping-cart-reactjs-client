@@ -25,7 +25,7 @@ const Login = () => {
     handleLogin(data.email, data.password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+      
         if (user) {
           toast.success("Account Login Successfully!");
         }
@@ -35,7 +35,7 @@ const Login = () => {
       })
       .catch((err) => {
         toast.error(err.code);
-        // console.log(err.message);
+     
       });
   };
 

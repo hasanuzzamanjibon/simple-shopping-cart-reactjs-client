@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 const ProductsDetails = () => {
   const {data} = useLoaderData();
   const { _id, title, price, image, rating, description, category } = data;
-  console.log(data);
+
   const [products] = useGetAllProducts();
   const remaining = products.filter((p) => p._id !== _id);
   const [valueOfQty, setValue] = useState(1);

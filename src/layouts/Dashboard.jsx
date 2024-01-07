@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import AdminRoutes from "../routes/AdminRoutes/AdminRoutes";
+// import AdminRoutes from "../routes/AdminRoutes/AdminRoutes";
 import SellerRoutes from "../routes/SellerRoutes/SellerRoutes";
 
 const Dashboard = () => {

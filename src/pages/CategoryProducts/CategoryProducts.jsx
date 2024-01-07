@@ -4,7 +4,7 @@ import ProductCard from "../../componenets/ProductCard/ProductCard";
 const CategoryProducts = () => {
   const { data } = useLoaderData();
   const categoryName = [...new Set(data.map((item) => item?.category))];
-  console.log(categoryName);
+
   return (
     <div className="px-4 space-y-7 py-6">
       <h1 className=" font-class capitalize text-2xl font-bold border-b-2 border-double border-accent inline-block bg-gradient-to-r from-sky-300  to-sky-600 text-transparent bg-clip-text">
