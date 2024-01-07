@@ -54,13 +54,13 @@ const AuthProvider = ({ children }) => {
       if (currentUser) {
         axios.post("http://localhost:3001/jwt", { email: currentUser?.email }).then((data) => {
           const token = data.data.token;
- 
+
           localStorage.setItem("access-token", token);
-          setLoading(false);
         });
       } else {
         localStorage.removeItem("access-token");
       }
+      setLoading(false);
     });
     return () => {
       unsubscibe();

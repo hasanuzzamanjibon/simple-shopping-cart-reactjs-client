@@ -3,7 +3,7 @@ import useGetDataByEmail from "../../customHook/useGetDataByEmail";
 import Fade from "react-reveal/Fade";
 const MyProducts = () => {
   const [myProducts, refetch] = useGetDataByEmail();
-
+  console.log(myProducts);
   const tableStyle = {
     borderSpacing: "10px",
     padding: "20px",
