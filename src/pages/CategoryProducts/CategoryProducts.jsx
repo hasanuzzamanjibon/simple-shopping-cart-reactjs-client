@@ -2,8 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import ProductCard from "../../componenets/ProductCard/ProductCard";
 
 const CategoryProducts = () => {
-  const productCategories = useLoaderData();
-  const categoryName = [...new Set(productCategories.map((item) => item?.category))];
+  const { data } = useLoaderData();
+  const categoryName = [...new Set(data.map((item) => item?.category))];
   console.log(categoryName);
   return (
     <div className="px-4 space-y-7 py-6">
@@ -11,8 +11,7 @@ const CategoryProducts = () => {
         buy the look : {categoryName[0] || ""}
       </h1>
       <div className=" grid grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-3 gap-6 ">
-        {productCategories &&
-          productCategories?.map((product) => <ProductCard key={product._id} product={product} />)}
+        {data && data?.map((product) => <ProductCard key={product._id} product={product} />)}
       </div>
     </div>
   );

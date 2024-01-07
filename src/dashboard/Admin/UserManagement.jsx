@@ -2,6 +2,7 @@ import useGetAllUsers from "../../customHook/useGetAllUsers";
 import Fade from "react-reveal/Fade";
 const UserManagement = () => {
   const [users, countDocuments] = useGetAllUsers();
+  console.log(users);
   const tableStyle = {
     borderSpacing: "10px",
     padding: "20px",

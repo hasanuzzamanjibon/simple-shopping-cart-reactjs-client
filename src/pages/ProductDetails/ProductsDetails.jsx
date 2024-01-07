@@ -8,7 +8,9 @@ import BuyNow from "../../componenets/Buttons/BuyNow";
 import toast from "react-hot-toast";
 
 const ProductsDetails = () => {
-  const { _id, title, price, image, rating, description, category } = useLoaderData();
+  const {data} = useLoaderData();
+  const { _id, title, price, image, rating, description, category } = data;
+  console.log(data);
   const [products] = useGetAllProducts();
   const remaining = products.filter((p) => p._id !== _id);
   const [valueOfQty, setValue] = useState(1);
@@ -82,7 +84,7 @@ const ProductsDetails = () => {
                 />
                 <button onClick={IncrementValue}>+</button>
               </div>
-              {/* add */}
+             
               <AddToCarts />
               <BuyNow />
             </div>

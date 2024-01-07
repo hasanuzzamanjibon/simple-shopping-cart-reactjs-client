@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useGetAllUsers = () => {
@@ -5,10 +6,9 @@ const useGetAllUsers = () => {
   const [countDocuments, setCountDocuments] = useState(0);
   useEffect(() => {
     const loadAllProducts = async () => {
-      const res = await fetch("http://localhost:3001/users");
-      const data = await res.json();
-      setUsers(data.result);
-      setCountDocuments(data.totalUsers);
+      const res = await axios.get("http://localhost:3001/users");
+      setUsers(res.data.result);
+      setCountDocuments(res.data.totalUsers);
     };
     loadAllProducts();
   }, []);

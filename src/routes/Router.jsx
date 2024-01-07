@@ -10,6 +10,7 @@ import UserManagement from "../dashboard/Admin/UserManagement";
 import ProductsManagement from "../dashboard/Admin/ProductsManagement";
 import Registration from "../pages/Registration/Registration";
 import Login from "../pages/Login/Login";
+import axios from "axios";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,12 +31,13 @@ const router = createBrowserRouter([
       {
         path: "products/:id",
         element: <ProductsDetails />,
-        loader: ({ params }) => fetch(`http://localhost:3001/products/${params.id}`),
+        loader: ({ params }) => axios.get(`http://localhost:3001/products/${params.id}`),
       },
       {
         path: "products/category/:category",
         element: <CategoryProducts />,
-        loader: ({ params }) => fetch(`http://localhost:3001/products/category/${params.category}`),
+        loader: ({ params }) =>
+          axios.get(`http://localhost:3001/products/category/${params.category}`),
       },
     ],
   },

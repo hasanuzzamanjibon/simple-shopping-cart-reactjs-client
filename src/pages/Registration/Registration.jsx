@@ -4,6 +4,7 @@ import { AuthContext } from "../../auth/AuthProvider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import GoogleBtn from "../../componenets/Buttons/GoogleBtn";
+import axios from "axios";
 
 const Registration = () => {
   const { handleEmailSIgnup, handleSignOut, handleUpdateProfile } = useContext(AuthContext);
@@ -42,19 +43,11 @@ const Registration = () => {
               setErrorMessage("  ");
               handleUpdateProfile(LoggedInUser, name, imgUrl)
                 .then(() => {
-                  fetch("http://localhost:3001/addUser", {
-                    method: "POST",
-                    headers: {
-                      "content-type": "application/json",
-                    },
-                    body: JSON.stringify(newUser),
-                  })
-                    .then((response) => response.json())
-                    .then((result) => {
-                      if (result.acknowledged) {
-                        toast.success("Account Created Successfully! Please, Login Now");
-                      }
-                    });
+                  axios.post("http://localhost:3001/addUser", newUser).then((result) => {
+                    if (result.data.acknowledged) {
+                      toast.success("Account Created Successfully! Please, Login Now");
+                    }
+                  });
                 })
                 .catch((error) => {
                   console.error(error.message);
