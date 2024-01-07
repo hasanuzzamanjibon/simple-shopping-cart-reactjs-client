@@ -6,7 +6,9 @@ const useGetAllProducts = () => {
   const [countDocuments, setCountDocuments] = useState(0);
   useEffect(() => {
     const loadAllProducts = async () => {
-      const res = await axios.get("http://localhost:3001/products");
+      const res = await axios.get("http://localhost:3001/products", {
+        headers: { authorization: `Bearer ${localStorage.getItem("access-token")}` },
+      });
       setProducts(res.data.result);
       setCountDocuments(res.data.totalProducts);
     };
