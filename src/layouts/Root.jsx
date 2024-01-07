@@ -7,7 +7,7 @@ function Root() {
     location.pathname.includes("/log-in") || location.pathname.includes("/sign-up");
 
   return (
-    <div className="bg-[url('https://i.postimg.cc/3RDM05gB/pxfuel.jpg')] bg-cover bg-fixed bg-sky-200 bg-center bg-no-repeat">
+    <div className="bg-[url('https://cdn.pixabay.com/photo/2021/09/23/19/08/background-6650672_1280.jpg')] bg-cover bg-fixed bg-gray-950 bg-center bg-no-repeat">
       <div className="max-w-6xl relative mx-auto bg-white">
         {!isNavbarShowed && <Navbar />}
         <div className="min-h-[calc(100vh-40px)] w-full">

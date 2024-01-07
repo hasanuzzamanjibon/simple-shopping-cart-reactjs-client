@@ -33,15 +33,11 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const handleUpdateProfile = (name, imgUrl) => {
-    updateProfile(auth.currentUser, {
+  const handleUpdateProfile = (LoggedInUser, name, imgUrl) => {
+    return updateProfile(LoggedInUser, {
       displayName: name,
       photoURL: imgUrl,
-    })
-      .then(() => {})
-      .catch((error) => {
-        console.error(error.messsage);
-      });
+    });
   };
 
   useEffect(() => {

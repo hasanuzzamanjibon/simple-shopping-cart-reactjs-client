@@ -96,7 +96,7 @@ const Login = () => {
                   <button className="btn btn-link">Forget Password ?</button>
                 </div>
               </div>
-              <input className="btn btn-md w-full btn-accent" type="submit" />
+              <input className="btn btn-sm w-full btn-accent" value={"Log-in"} type="submit" />
             </form>
             <div className="divider "></div>
             <p>
