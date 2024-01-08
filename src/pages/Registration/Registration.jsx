@@ -66,9 +66,6 @@ const Registration = () => {
       });
   };
 
-  //   const updateProfie = (loggedUser, name, imgUrl) => {
-  //     handleUpdateProfile
-  //   };
   return (
     <div className="h-screen w-full relative flex justify-center items-center bg-gray-50 px-6">
       <div className="h-screen left-0 top-0 absolute bg-teal-500 w-[30%]"></div>
@@ -99,12 +96,11 @@ const Registration = () => {
                 <span>{errorMessage}</span>
               </div>
             )}
-            {/* {errorMessage && <span className="text-error">{errorMessage}</span>} */}
+
             <form
               onSubmit={handleSubmit(onSubmit)}
               className=" flex w-full  flex-col gap-2 bg-transparent "
             >
-              {/* register your input into the hook by invoking the "register" function */}
               <input
                 className="w-full bg-gray-100 px-3 py-2 rounded text-gray-700 placeholder:text-gray-400 focus:outline-gray-400"
                 placeholder="Enter your name"
@@ -120,7 +116,7 @@ const Registration = () => {
                   {errors.name.message}
                 </p>
               )}
-              {/* include validation with required or other standard HTML validation rules */}
+
               <input
                 type="email"
                 placeholder="Enter your email"
